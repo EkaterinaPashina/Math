@@ -1,0 +1,56 @@
+* {
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    font-size: 16px;
+}
+
+.container {
+    background-color: #000000;
+    padding-top: 1rem;
+    padding-left: 2rem;
+}
+
+.container__items {
+    display: flex;
+    flex-direction: row;
+}
+
+.container__main_header {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+}
+
+.container__second_header {
+    color: rgb(96, 135, 213);
+    font-size: 1.2rem;
+}
+
+.container__input {
+    background: transparent;
+    border: 3px dotted rgb(96, 135, 213);
+    width: 90%;
+    margin-bottom: 1.2rem;
+}
+
+.container__info {
+    flex-basis: 50%;
+}
+
+.container__chat {
+    flex-basis: 50%;
+}
+
+.container__textarea {
+    background: transparent;
+    border: 3px dotted rgb(96, 135, 213);
+    width: 90%;
+    resize: none;
+    margin-bottom: 3rem;
+}
+
+.bold {
+    font-weight: bolder;
+}
