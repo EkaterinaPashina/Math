@@ -54,3 +54,27 @@
 .bold {
     font-weight: bolder;
 }
+
+#button {
+    color: rgb(96, 135, 213);
+    background-color: black;
+    border: 3px dashed rgb(96, 135, 213);
+    border-radius: 10px;
+    padding: 10px 30px;
+    margin-bottom: 1.5rem;
+}
+
+#button:hover {
+    background-color: rgb(96, 135, 213);
+    color: black;
+    border: 3px solid black;
+}
+
+.showname {
+    color: #ffffff;
+    font-size: 1.5rem;
+}
+
+.avatar {
+    width: 100px;
+}
