@@ -2,53 +2,38 @@
 const button = document.querySelector("button");
 
 //Получение имени пользователя
-let username = document.querySelector("#username");
+const username = document.querySelector("#username").value;
+console.log(username);
 
 //Приведение к верному регистру имени пользователя
-username.addEventListener("input", () => {
-    let fullName = [];
-    let newName = username.value.toLowerCase().split(" ");
-    newName.forEach((names) => {
-        names = names.charAt(0).toUpperCase() + names.slice(1);
-        fullName.push(names);
-        username.value = fullName.join(" ");
-    });
-});
-
-//Определение зоны для ввода имени пользователя 
-const printName = document.querySelector(".show__name");
-
-//Определение введенной ссылки аватара
-const img = document.querySelector("#link");
-
-//Получение комментария
-const textarea = document.querySelector("#textarea");
-
-//Определение комментария без цензуры
-const dirtyText = textarea.value;
-
-//Создание функции для применения цензуры
-const cleanUp = () => {
-    const words = dirtyText.trim().split(' ');
-    const cenzoredText = [];
-    for (let word of words) {
-        if (word.toLowerCase === 'viagra') {
-            cenzoredText.push('***');
-        } else if (word.toLowerCase === 'xxx') {
-            cenzoredText.push('***')
-        } else {
-            cenzoredText.push(word);
-        }
-    }
-    const censoredText = cenzoredText.join(' ');
-    return censoredText;
+const rightName = (name) => {
+    const checkedName = name.toLowerCase();
+    result = checkedName[0].toUpperCase() + checkedName.substring(1);
+    return result;
 };
 
-//Функция для отображения аватара, имени пользователя, комментария с цензурой
+nameInfo = rightName(username);
+console.log(nameInfo);
+
+//Получение введенной ссылки аватара
+const img = document.querySelector("#link").value;
+console.log(img);
+
+//Получение комментария
+const textarea = document.querySelector("#textarea").value;
+console.log(textarea);
+
+//Функция, которая создает элементы чата
 const showInfo = () => {
-    avatar.setAttribute("src", img.value);
-    printName.textContent = username.value;
-    //textarea.textContent = censoredText.value;
+    const parent = document.querySelector('#container__chat');
+
+    let p = document.createElement('p');
+    p.textContent = nameInfo;
+    parent.appendChild(p);
+
+    const image = document.createElement('img');
+    image.src = img;
+    image.className = 'img';
 };
 
 //Определение функции по нажатию кнопки
