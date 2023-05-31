@@ -39,7 +39,7 @@
     flex-basis: 50%;
 }
 
-.container__chat {
+#container__chat {
     flex-basis: 50%;
 }
 
@@ -72,4 +72,10 @@
 
 .container__chat__image {
     width: 100px;
+}
+
+.container__chat__div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
