@@ -1,5 +1,6 @@
 //Определение кнопки отправки
 const button = document.querySelector("button");
+const form = document.querySelector("form");
 
 //Определение события по нажатию кнопки
 function showChat(event) {
@@ -33,25 +34,8 @@ function showChat(event) {
     //Присвоение правильного значения комментарию
     const checkedComment = clearComment(textarea);
 
-    //Функция, которая создает элементы чата
+    //Переменная-родитель для создания дива
     const parent = document.querySelector('.container__user__info');
-
-    //Создание diva
-    const div = document.createElement('div');
-    div.className = 'container__chat__div';
-    parent.appendChild(div);
-
-    //Создание элемента аватара
-    const avatar = new Image();
-    avatar.src = img;
-    avatar.className = 'container__chat__image';
-    parent.appendChild(avatar);
-
-    //Создание элемента имени
-    const name = document.createElement('p');
-    name.textContent = nameInfo;
-    name.className = 'container__chat__name';
-    parent.appendChild(name);
 
     //Добавление даты и времени
     const now = new Date();
@@ -63,10 +47,28 @@ function showChat(event) {
     const seconds = `${now.getSeconds()}`.padStart(2, 0);
     const showDate = `${date}/${month}/${year} ${hours}:${minutes}:${seconds}`;
 
+    //Создание дива-родителя для аватара, имени и времени
+    const div = document.createElement('div');
+    div.className = 'container__chat__div';
+    parent.appendChild(div);
+
+    //Создание тега img с ссылкой на аватар
+    const avatar = new Image();
+    avatar.src = img;
+    avatar.className = 'container__chat__image';
+
+    //Создание тега имени со значением имени 
+    const name = document.createElement('p');
+    name.textContent = nameInfo;
+    name.className = 'container__chat__name';
+
+    //Создание тега даты со значением даты публикации
     const datep = document.createElement('p');
     datep.textContent = showDate;
     datep.className = 'container__date';
-    parent.appendChild(datep);
+
+    //Добавление элементов аватара, имени и даты в родительский див
+    div.append(avatar, name, datep);
 
     //Создание элемента комментария
     let comment = document.createElement('p');
@@ -74,6 +76,8 @@ function showChat(event) {
     comment.className = 'container__chat__comment';
     parent.appendChild(comment);
 
+    //Удаление введенной информации из формы
+    form.reset();
 }
 
 button.addEventListener('click', showChat);

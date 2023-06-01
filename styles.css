@@ -71,11 +71,46 @@
 }
 
 .container__chat__image {
-    width: 100px;
+    width: 80px;
+    object-fit: cover;
 }
 
 .container__chat__div {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-right: 4rem;
+}
+
+.container__chat__comment {
+    border-bottom: 2px dotted rgb(96, 135, 213);
+    /* text-align: center; */
+    padding-bottom: 0.5rem;
+    padding-left: 0.4rem;
+    color: rgb(230, 0, 255);
+    white-space: pre-line;
+}
+
+.container__chat__name,
+.container__date {
+    color: rgb(115, 194, 255);
+}
+
+.container__user__info {
+    max-height: 60vh;
+    overflow: auto;
+}
+
+.container__user__info::-webkit-scrollbar {
+    width: 12px;
+}
+
+.container__user__info::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.container__user__info::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 20px;
+    border: 3px solid rgb(0, 191, 255);
 }
