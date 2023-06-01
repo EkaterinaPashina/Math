@@ -6,6 +6,7 @@
     line-height: 30px;
     font-size: 16px;
     background-color: #000000;
+    box-sizing: border-box;
 }
 
 .container {
@@ -88,7 +89,7 @@
     padding-bottom: 0.5rem;
     padding-left: 0.4rem;
     color: rgb(230, 0, 255);
-    white-space: pre-line;
+    overflow: hidden;
 }
 
 .container__chat__name,
