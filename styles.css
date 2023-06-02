@@ -99,6 +99,7 @@
 .container__user__info {
     max-height: 60vh;
     overflow: auto;
+    max-width: 680px;
 }
 
 .container__user__info::-webkit-scrollbar {
